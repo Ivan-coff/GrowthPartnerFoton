@@ -50,6 +50,32 @@ function getAllVehicles(PDO $pdo): array
     return $stmt->fetchAll();
 }
 
+function getVehicleImageCount(PDO $pdo, int $vehicleId): int
+{
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM vehicle_images WHERE vehicle_id = :id');
+    $stmt->execute([':id' => $vehicleId]);
+    return (int) $stmt->fetchColumn();
+}
+
+function getVehicleImagesForVehicles(PDO $pdo, array $vehicleIds): array
+{
+    $vehicleIds = array_values(array_filter(array_map('intval', $vehicleIds)));
+    if ($vehicleIds === []) {
+        return [];
+    }
+
+    $placeholders = implode(',', array_fill(0, count($vehicleIds), '?'));
+    $stmt = $pdo->prepare("SELECT vehicle_id, image_url FROM vehicle_images WHERE vehicle_id IN ($placeholders) ORDER BY id ASC");
+    $stmt->execute($vehicleIds);
+
+    $map = [];
+    foreach ($stmt->fetchAll() as $row) {
+        $map[(int) $row['vehicle_id']][] = $row['image_url'];
+    }
+
+    return $map;
+}
+
 ensureDefaultAdmin($pdo);
 
 return $pdo;

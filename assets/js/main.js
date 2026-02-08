@@ -23,23 +23,33 @@ if (contactForm) {
         const message = contactForm.querySelector('#message');
         let valid = true;
 
-        [name, email, message].forEach((field) => {
-            field.classList.remove('is-error');
+        const fields = [name, email, message];
+
+        fields.forEach((field) => {
+            field.classList.remove('is-invalid');
+        });
+
+        fields.forEach((field) => {
             if (!field.value.trim()) {
                 valid = false;
-                field.classList.add('is-error');
+                field.classList.add('is-invalid');
             }
         });
 
         if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
             valid = false;
-            email.classList.add('is-error');
+            email.classList.add('is-invalid');
         }
 
         if (!valid) {
             event.preventDefault();
-            alert('Revisa los campos del formulario.');
         }
+    });
+
+    contactForm.querySelectorAll('input, textarea').forEach((field) => {
+        field.addEventListener('input', () => {
+            field.classList.remove('is-invalid');
+        });
     });
 }
 
@@ -93,3 +103,116 @@ catalogBlocks.forEach((block) => {
 
     updateControls();
 });
+
+const toast = document.querySelector('[data-toast]');
+if (toast) {
+    window.setTimeout(() => {
+        toast.classList.add('is-hiding');
+    }, 1800);
+
+    window.setTimeout(() => {
+        toast.remove();
+    }, 2400);
+}
+
+const lightbox = document.getElementById('lightbox');
+const galleryItems = document.querySelectorAll('[data-gallery]');
+
+if (lightbox && galleryItems.length > 0) {
+    const imageEl = lightbox.querySelector('.lightbox__image');
+    const prevBtn = lightbox.querySelector('[data-lightbox-prev]');
+    const nextBtn = lightbox.querySelector('[data-lightbox-next]');
+    const closeBtns = lightbox.querySelectorAll('[data-lightbox-close]');
+    const countEl = lightbox.querySelector('[data-lightbox-count]');
+
+    let images = [];
+    let index = 0;
+    let altText = '';
+
+    const update = () => {
+        if (!images.length) {
+            return;
+        }
+
+        imageEl.src = images[index];
+        imageEl.alt = altText;
+
+        if (countEl) {
+            countEl.textContent = `${index + 1} / ${images.length}`;
+        }
+
+        const disabled = images.length <= 1;
+        prevBtn.disabled = disabled;
+        nextBtn.disabled = disabled;
+    };
+
+    const openLightbox = (list, startIndex, alt) => {
+        images = list;
+        index = startIndex;
+        altText = alt;
+        update();
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    const move = (dir) => {
+        if (!images.length) {
+            return;
+        }
+        index = (index + dir + images.length) % images.length;
+        update();
+    };
+
+    galleryItems.forEach((item) => {
+        const imagesAttr = item.getAttribute('data-gallery') || '';
+        const list = imagesAttr.split('|').filter(Boolean);
+        if (list.length === 0) {
+            return;
+        }
+
+        const img = item.querySelector('img');
+        const currentSrc = img ? img.getAttribute('src') : '';
+        const startIndex = Math.max(list.indexOf(currentSrc), 0);
+        const alt = img ? img.getAttribute('alt') || '' : '';
+
+        const open = () => openLightbox(list, startIndex, alt);
+
+        item.addEventListener('click', open);
+        item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                open();
+            }
+        });
+    });
+
+    prevBtn.addEventListener('click', () => move(-1));
+    nextBtn.addEventListener('click', () => move(1));
+
+    closeBtns.forEach((btn) => btn.addEventListener('click', closeLightbox));
+
+    document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) {
+            return;
+        }
+
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+
+        if (event.key === 'ArrowLeft') {
+            move(-1);
+        }
+
+        if (event.key === 'ArrowRight') {
+            move(1);
+        }
+    });
+}
