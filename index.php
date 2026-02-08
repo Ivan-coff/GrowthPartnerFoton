@@ -38,7 +38,13 @@ $usedVehicles = getVehiclesByType($pdo, 'usado');
                 </div>
             </div>
             <div class="hero__media reveal">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Autos FOTON en exhibicion">
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+                    alt="Autos FOTON en exhibicion"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                >
                 <div class="hero__badge">Grow Partner</div>
             </div>
         </section>
@@ -66,7 +72,12 @@ $usedVehicles = getVehiclesByType($pdo, 'usado');
                          <?php foreach ($newVehicles as $vehicle): ?>
                              <article class="card reveal">
                                 <div class="card__image">
-                                    <img src="<?php echo htmlspecialchars($vehicle['image_url']); ?>" alt="<?php echo htmlspecialchars($vehicle['title']); ?>">
+                                    <img
+                                        src="<?php echo htmlspecialchars($vehicle['image_url']); ?>"
+                                        alt="<?php echo htmlspecialchars($vehicle['title']); ?>"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
                                 </div>
                                 <div class="card__body">
                                     <h4><?php echo htmlspecialchars($vehicle['title']); ?></h4>
@@ -98,7 +109,12 @@ $usedVehicles = getVehiclesByType($pdo, 'usado');
                          <?php foreach ($usedVehicles as $vehicle): ?>
                              <article class="card reveal">
                                 <div class="card__image">
-                                    <img src="<?php echo htmlspecialchars($vehicle['image_url']); ?>" alt="<?php echo htmlspecialchars($vehicle['title']); ?>">
+                                    <img
+                                        src="<?php echo htmlspecialchars($vehicle['image_url']); ?>"
+                                        alt="<?php echo htmlspecialchars($vehicle['title']); ?>"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
                                 </div>
                                 <div class="card__body">
                                     <h4><?php echo htmlspecialchars($vehicle['title']); ?></h4>
