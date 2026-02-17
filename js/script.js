@@ -35,12 +35,14 @@
 
             navMenu.classList.remove('is-open');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenuToggle.setAttribute('aria-label', 'Abrir menú');
         }
 
         if (mobileMenuToggle && navMenu) {
             mobileMenuToggle.addEventListener('click', function() {
                 const isOpen = navMenu.classList.toggle('is-open');
                 mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
             });
 
             navMenu.querySelectorAll('a').forEach(link => {
