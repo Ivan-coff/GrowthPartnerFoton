@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
         <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -24,7 +25,7 @@
                 </a>
             </div>
             <nav>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="main-nav">
                     <li><a href="#inicio">INICIO</a></li>
                     <li><a href="#marca">MARCA</a></li>
                     <li class="dropdown">
@@ -49,7 +50,7 @@
                class="whatsapp-btn-header" target="_blank">
                 <span>📱</span> CONSULTAR
             </a>
-            <button class="mobile-menu-toggle">☰</button>
+            <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
         </div>
     </header>
 
@@ -64,88 +65,12 @@
                     <h1 class="hero-title">REPRESENTANTES<br><span class="highlight">OFICIALES FOTON</span></h1>
                     <p class="hero-subtitle">Camiones y Pickups de trabajo respaldados por tecnología global y servicio regional establecido</p>
                     <div class="hero-cta-group">
-                        <a href="#lineup" class="btn-primary">VER TODA LA GAMA</a>
+                        <a href="#vehiculos" class="btn-primary">VER TODA LA GAMA</a>
                         <a href="#contacto" class="btn-secondary">CONTACTAR AHORA</a>
                     </div>
                 </div>
                 <div class="hero-brand-block">
                     <img src="img/logo-growth-partner.png" alt="Growth Partner" class="hero-brand-logo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Lineup Section -->
-    <section class="lineup-section" id="lineup">
-        <div class="section-header">
-            <div class="section-badge">NUESTRA GAMA</div>
-            <h2 class="section-title">SOLUCIONES PARA CADA NECESIDAD</h2>
-            <p class="section-subtitle">Desde transporte urbano hasta carga pesada regional. Foton ofrece tecnología probada para el trabajo real en Tierra del Fuego.</p>
-        </div>
-
-        <div class="lineup-grid">
-            <!-- Camiones Livianos -->
-            <div class="lineup-card" onclick="scrollToSection('livianos')">
-                <div class="lineup-image">
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="50" y="80" width="200" height="60" fill="#C8102E"/>
-                        <rect x="250" y="90" width="80" height="50" fill="#4A5568"/>
-                        <circle cx="100" cy="140" r="20" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <circle cx="280" cy="140" r="20" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <rect x="260" y="95" width="60" height="35" fill="#E5E7EB" opacity="0.8"/>
-                        <polygon points="250,90 270,70 330,70 330,90" fill="#C8102E"/>
-                    </svg>
-                </div>
-                <div class="lineup-content">
-                    <div class="lineup-category">CAMIONES LIVIANOS</div>
-                    <h3 class="lineup-title">SERIE AUMARK S</h3>
-                    <div class="lineup-capacity">HASTA 3.5 TON</div>
-                    <p class="lineup-description">Agilidad urbana con respaldo industrial. Ideales para distribución, mudanzas y transporte liviano en la región.</p>
-                    <a href="#livianos" class="lineup-link">Ver modelos livianos →</a>
-                </div>
-            </div>
-
-            <!-- Camiones Medianos -->
-            <div class="lineup-card" onclick="scrollToSection('medianos')">
-                <div class="lineup-image">
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="40" y="70" width="240" height="70" fill="#C8102E"/>
-                        <rect x="280" y="85" width="90" height="55" fill="#4A5568"/>
-                        <circle cx="90" cy="140" r="22" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <circle cx="240" cy="140" r="22" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <circle cx="310" cy="140" r="22" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <rect x="290" y="90" width="70" height="40" fill="#E5E7EB" opacity="0.8"/>
-                        <polygon points="280,85 300,65 370,65 370,85" fill="#C8102E"/>
-                    </svg>
-                </div>
-                <div class="lineup-content">
-                    <div class="lineup-category">CAMIONES MEDIANOS</div>
-                    <h3 class="lineup-title">SERIE AUMARK M</h3>
-                    <div class="lineup-capacity">4.5 A 8 TON</div>
-                    <p class="lineup-description">Potencia y versatilidad para transporte regional. Robustez comprobada para trabajo pesado y rutas patagónicas.</p>
-                    <a href="#medianos" class="lineup-link">Ver modelos medianos →</a>
-                </div>
-            </div>
-
-            <!-- Pickups -->
-            <div class="lineup-card" onclick="scrollToSection('pickups')">
-                <div class="lineup-image">
-                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="60" y="90" width="140" height="50" fill="#C8102E"/>
-                        <rect x="200" y="95" width="90" height="45" fill="#4A5568"/>
-                        <circle cx="110" cy="140" r="20" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <circle cx="250" cy="140" r="20" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
-                        <rect x="210" y="100" width="70" height="35" fill="#E5E7EB" opacity="0.8"/>
-                        <polygon points="200,95 220,75 290,75 290,95" fill="#C8102E"/>
-                        <line x1="60" y1="90" x2="200" y2="90" stroke="#1A1A1A" stroke-width="2"/>
-                    </svg>
-                </div>
-                <div class="lineup-content">
-                    <div class="lineup-category">PICKUPS</div>
-                    <h3 class="lineup-title">SERIE TUNLAND</h3>
-                    <div class="lineup-capacity">1 TON CARGA</div>
-                    <p class="lineup-description">Robustez todoterreno para todo uso. Versatilidad profesional y familiar adaptada al clima austral.</p>
-                    <a href="#pickups" class="lineup-link">Ver pickups →</a>
                 </div>
             </div>
         </div>
@@ -169,16 +94,7 @@
                     <li>Componentes Dana para máxima durabilidad</li>
                     <li>Garantía y postventa establecida en Argentina</li>
                 </ul>
-                <a href="#marca" class="btn-primary" style="display: inline-block; margin-top: 2rem;">CONOCER LA MARCA →</a>
-            </div>
-            <div class="why-foton-image">
-                <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="150" cy="150" r="120" fill="none" stroke="#C8102E" stroke-width="2" opacity="0.2"/>
-                    <circle cx="150" cy="150" r="90" fill="none" stroke="#C8102E" stroke-width="2" opacity="0.4"/>
-                    <circle cx="150" cy="150" r="60" fill="none" stroke="#C8102E" stroke-width="3"/>
-                    <text x="150" y="165" font-family="Montaser Arabic, Montserrat, sans-serif" font-size="52" font-weight="700" fill="#C8102E" text-anchor="middle">FOTON</text>
-                    <text x="150" y="190" font-family="Montserrat, sans-serif" font-size="14" fill="#E5E7EB" text-anchor="middle">MOTOR GLOBAL</text>
-                </svg>
+                <a href="#marca" class="btn-secondary-dark" style="display: inline-block; margin-top: 2rem;">CONOCER LA MARCA →</a>
             </div>
         </div>
     </section>
@@ -304,13 +220,6 @@
             </div>
         </div>
 
-        <!-- Brochure Download -->
-        <div class="brochure-download">
-            <div class="brochure-icon">📄</div>
-            <h3>CATÁLOGO INSTITUCIONAL FOTON 2024</h3>
-            <p>Toda la información técnica y comercial de nuestras líneas de productos en un solo documento</p>
-            <a href="#download" class="btn-primary">DESCARGAR PDF (3.2 MB)</a>
-        </div>
     </section>
 
     <!-- Models Section -->
@@ -461,17 +370,17 @@
             <h3 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--foton-red);">MEDIANOS</h3>
             <div class="models-grid">
                 <div class="model-card">
-                    <div class="model-image"><img src="img/models/auman-d/foto-1.jpg" alt="Auman D"></div>
+                    <div class="model-image"><img src="img/models/auman-d/foto-1.png" alt="Auman D"></div>
                     <div class="model-info">
                         <h3 class="model-name">AUMAN D</h3>
                         <div class="model-specs">
                             <div class="spec-item"><span class="spec-icon">🚛</span><span>Camión mediano multipropósito</span></div>
                             <div class="spec-item"><span class="spec-icon">📦</span><span>Distribución regional</span></div>
                             <div class="spec-item"><span class="spec-icon">⚙️</span><span>Configuración según aplicación</span></div>
-                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Ficha local a confirmar</span></div>
+                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Versiones 1621 y 2027</span></div>
                         </div>
-                        <p style="color: var(--steel-gray); margin: 1rem 0;">Modelo mediano para carga general con enfoque en productividad y durabilidad.</p>
-                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN D" data-images="img/models/auman-d/foto-1.jpg">VER MÁS FOTOS</button><a href="img/models/auman-d/ficha-tecnica-auman-d.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20D." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
+                        <p style="color: var(--steel-gray); margin: 1rem 0;">La línea AUMAN D es ideal para los trabajos de media y larga distancia, donde se prioriza la eficiencia, baja tara y confort para el conductor. Un tren motriz eficiente y una cabina de alta calidad hacen al AUMAN D un excelente aliado para el negocio.</p>
+                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN D" data-images="img/models/auman-d/foto-1.png,img/models/auman-d/foto-2.jpg,img/models/auman-d/foto-3.jpg">VER MÁS FOTOS</button><a href="img/models/auman-d/ficha-tecnica-auman-d.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20D." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
                     </div>
                 </div>
             </div>
@@ -489,10 +398,10 @@
                             <div class="spec-item"><span class="spec-icon">🚛</span><span>Larga distancia</span></div>
                             <div class="spec-item"><span class="spec-icon">🛣️</span><span>Optimizado para ruta</span></div>
                             <div class="spec-item"><span class="spec-icon">⚙️</span><span>Configuraciones tractor/chasis</span></div>
-                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Ficha local a confirmar</span></div>
+                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Versiones 2443 y 2546</span></div>
                         </div>
-                        <p style="color: var(--steel-gray); margin: 1rem 0;">Nueva evolución de la línea de pesados de ruta con foco en eficiencia operativa.</p>
-                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="NUEVO AUMAN R" data-images="img/models/nuevo-auman-r/foto-1.jpg">VER MÁS FOTOS</button><a href="img/models/nuevo-auman-r/ficha-tecnica-nuevo-auman-r.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Nuevo%20Auman%20R." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
+                        <p style="color: var(--steel-gray); margin: 1rem 0;">La nueva línea AUMAN R representa un avance excepcional, cumpliendo con los más altos estándares europeos y las más avanzadas tecnologías. Fruto de la alianza estratégica entre FOTON y Daimler, este camión de alto rendimiento destaca por su eficiencia en recorridos de larga distancia. Su diseño y desarrollo interior más moderno ofrecen una experiencia de conducción incomparable.</p>
+                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="NUEVO AUMAN R" data-images="img/models/nuevo-auman-r/foto-1.jpg,img/models/nuevo-auman-r/foto-2.jpg,img/models/nuevo-auman-r/foto-3.jpg">VER MÁS FOTOS</button><a href="img/models/nuevo-auman-r/ficha-tecnica-auman-r.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Nuevo%20Auman%20R." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
                     </div>
                 </div>
 
@@ -504,10 +413,10 @@
                             <div class="spec-item"><span class="spec-icon">🚛</span><span>Transporte de larga distancia</span></div>
                             <div class="spec-item"><span class="spec-icon">📦</span><span>Alta capacidad de arrastre</span></div>
                             <div class="spec-item"><span class="spec-icon">🧭</span><span>Confort para largas jornadas</span></div>
-                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Ficha local a confirmar</span></div>
+                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Versiones 1843/2556/2656</span></div>
                         </div>
-                        <p style="color: var(--steel-gray); margin: 1rem 0;">Pesado de ruta diseñado para alta exigencia en corredores logísticos.</p>
-                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN R" data-images="img/models/auman-r/foto-1.jpg">VER MÁS FOTOS</button><a href="img/models/auman-r/ficha-tecnica-auman-r.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20R." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
+                        <p style="color: var(--steel-gray); margin: 1rem 0;">La línea AUMAN R es un exitoso desarrollo con los estándares europeos más exigentes y fue logrado gracias a la estrecha alianza de FOTON y Daimler, dando como resultado un potente camión con altos estándares de eficiencia para aplicaciones de larga distancia.</p>
+                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN R" data-images="img/models/auman-r/foto-1.jpg,img/models/auman-r/foto-2.jpg,img/models/auman-r/foto-3.jpg">VER MÁS FOTOS</button><a href="img/models/auman-r/ficha-tecnica-auman-r.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20R." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
                     </div>
                 </div>
             </div>
@@ -523,12 +432,12 @@
                         <h3 class="model-name">AUMAN C</h3>
                         <div class="model-specs">
                             <div class="spec-item"><span class="spec-icon">🏗️</span><span>Aplicaciones vocacionales</span></div>
-                            <div class="spec-item"><span class="spec-icon">⚙️</span><span>Configurable para obra/minería</span></div>
+                            <div class="spec-item"><span class="spec-icon">⚙️</span><span>Configurable para obra/minería/mixer</span></div>
                             <div class="spec-item"><span class="spec-icon">🛠️</span><span>Chasis reforzado</span></div>
-                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Ficha local a confirmar</span></div>
+                            <div class="spec-item"><span class="spec-icon">ℹ️</span><span>Versiones 3535/4440/4146/5046</span></div>
                         </div>
-                        <p style="color: var(--steel-gray); margin: 1rem 0;">Línea pesada para tareas específicas de alta demanda operativa.</p>
-                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN C" data-images="img/models/auman-c/foto-1.jpg">VER MÁS FOTOS</button><a href="img/models/auman-c/ficha-tecnica-auman-c.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20C." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
+                        <p style="color: var(--steel-gray); margin: 1rem 0;">La línea AUMAN C es ideal para los trabajos más severos de Construcción y Minería, donde la robustez, disponibilidad y eficiencia son claves para la actividad.</p>
+                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="AUMAN C" data-images="img/models/auman-c/foto-1.jpg,img/models/auman-c/foto-2.jpg,img/models/auman-c/foto-3.jpg">VER MÁS FOTOS</button><a href="img/models/auman-c/ficha-tecnica-auman-c.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20Auman%20C." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
                     </div>
                 </div>
             </div>
@@ -544,12 +453,12 @@
                         <h3 class="model-name">eAUMARK</h3>
                         <div class="model-specs">
                             <div class="spec-item"><span class="spec-icon">🔋</span><span>100% eléctrico</span></div>
-                            <div class="spec-item"><span class="spec-icon">🛣️</span><span>Autonomía aprox. 180 km</span></div>
+                            <div class="spec-item"><span class="spec-icon">🛣️</span><span>Autonomía aprox. 200/250 km</span></div>
                             <div class="spec-item"><span class="spec-icon">🌱</span><span>Cero emisiones locales</span></div>
                             <div class="spec-item"><span class="spec-icon">🏙️</span><span>Logística urbana</span></div>
                         </div>
-                        <p style="color: var(--steel-gray); margin: 1rem 0;">Camión eléctrico liviano para distribución de última milla y operación sustentable.</p>
-                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="eAUMARK" data-images="img/models/eaumark/foto-1.jpg">VER MÁS FOTOS</button><a href="img/models/eaumark/ficha-tecnica-eaumark.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20eAumark." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
+                        <p style="color: var(--steel-gray); margin: 1rem 0;">El eAumark L6 es el primer camión eléctrico urbano del país, formando parte del cambio de la logística hacia la neutralidad de emisiones. Alta tecnología, seguridad y eficiencia son los principales atributos de este gran camión.</p>
+                        <div class="model-actions"><button type="button" class="btn-small btn-details btn-gallery" data-model="eAUMARK" data-images="img/models/eaumark/foto-1.jpg,img/models/eaumark/foto-2.jpg,img/models/eaumark/foto-3.jpg">VER MÁS FOTOS</button><a href="img/models/eaumark/ficha-tecnica-eaumark.pdf" class="btn-small btn-download" download>DESCARGAR INFORMACIÓN</a><a href="https://wa.me/5492901XXXXXX?text=Hola,%20quiero%20informaci%C3%B3n%20del%20eAumark." target="_blank" class="btn-small btn-whatsapp">📱 CONSULTAR</a></div>
                     </div>
                 </div>
             </div>
@@ -576,7 +485,6 @@
                     <li>Diagnóstico computarizado</li>
                     <li>Reparación motor y transmisión</li>
                     <li>Electricidad y electrónica</li>
-                    <li>Chapa, pintura y carrocería</li>
                 </ul>
                 <a href="https://wa.me/5492901XXXXXX?text=Hola,%20necesito%20agendar%20un%20service%20para%20mi%20vehículo%20Foton.%20Gracias." 
                    target="_blank" class="btn-primary" style="margin-top: 1.5rem; display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem;">
@@ -588,7 +496,7 @@
                 <div class="service-icon">⚙️</div>
                 <h3>REPUESTOS ORIGINALES</h3>
                 <p style="color: var(--steel-gray); margin-bottom: 1.5rem;">
-                    Stock permanente de repuestos genuinos Foton con garantía de fábrica y compatibilidad perfecta.
+                    Stock de repuestos genuinos Foton con garantía de fábrica y compatibilidad perfecta.
                 </p>
                 <ul>
                     <li>Filtros y lubricantes originales</li>
@@ -603,7 +511,7 @@
                 </a>
             </div>
 
-            <div class="service-card">
+            <div class="service-card service-card-no-cta">
                 <div class="service-icon">📋</div>
                 <h3>PLAN DE MANTENIMIENTO</h3>
                 <p style="color: var(--steel-gray); margin-bottom: 1.5rem;">
@@ -616,9 +524,6 @@
                     <li>Recordatorios automáticos</li>
                     <li>Costos preestablecidos</li>
                 </ul>
-                <a href="#download-plan" class="btn-primary" style="margin-top: 1.5rem; display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem;">
-                    DESCARGAR PLAN
-                </a>
             </div>
         </div>
 
@@ -631,9 +536,9 @@
             <div class="warranty-grid">
                 <div class="warranty-item">
                     <h4>COBERTURA</h4>
-                    <p>3 años o 100,000 km (lo que ocurra primero)</p>
+                    <p>3 años a 5 años o 100.000/150.000 km (lo que ocurra primero)</p>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--light-gray);">
-                        Incluye motor, transmisión, componentes principales y mano de obra
+                        Varia segun modelo
                     </p>
                 </div>
                 <div class="warranty-item">
@@ -641,20 +546,6 @@
                     <p>Mantenimiento en taller oficial</p>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--light-gray);">
                         Uso según especificaciones del fabricante y respeto de intervalos de service
-                    </p>
-                </div>
-                <div class="warranty-item">
-                    <h4>ASISTENCIA</h4>
-                    <p>Asistencia mecánica 24/7</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--light-gray);">
-                        Cobertura en toda Argentina con red de talleres autorizados
-                    </p>
-                </div>
-                <div class="warranty-item">
-                    <h4>EXTENSIÓN</h4>
-                    <p>Planes de garantía extendida disponibles</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--light-gray);">
-                        Hasta 5 años o 200,000 km con cobertura total
                     </p>
                 </div>
             </div>
@@ -666,7 +557,7 @@
         <div class="section-header">
             <div class="section-badge">FINANCIACIÓN</div>
             <h2 class="section-title">HACEMOS QUE TU VEHÍCULO SEA UNA REALIDAD</h2>
-            <p class="section-subtitle">Planes adaptados a particulares y empresas con tasas competitivas</p>
+            <p class="section-subtitle">Financiación bancaria con tasas competitivas y aprobación ágil</p>
         </div>
 
         <div class="financing-options">
@@ -680,70 +571,6 @@
                     <li>Anticipo desde 20%</li>
                     <li>Aprobación en 48hs</li>
                 </ul>
-            </div>
-
-            <div class="financing-card">
-                <div class="financing-icon">📊</div>
-                <h3>LEASING</h3>
-                <ul>
-                    <li>Ideal para empresas</li>
-                    <li>Beneficios fiscales</li>
-                    <li>Opción de compra al final</li>
-                    <li>Mantenimiento incluido (opcional)</li>
-                    <li>Renovación de flota facilitada</li>
-                </ul>
-            </div>
-
-            <div class="financing-card">
-                <div class="financing-icon">💼</div>
-                <h3>PLAN DIRECTO</h3>
-                <ul>
-                    <li>Financiación directa Growth Partner</li>
-                    <li>Condiciones especiales</li>
-                    <li>Aprobación ágil</li>
-                    <li>Flexibilidad de cuotas</li>
-                    <li>Asesoramiento personalizado</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Simulator Box -->
-        <div class="simulator-box">
-            <h3>SIMULADOR DE CUOTAS</h3>
-            <p style="text-align: center; margin-bottom: 2rem;">
-                Contactanos para una simulación personalizada según tu perfil y el vehículo de interés
-            </p>
-            <a href="https://wa.me/5492901XXXXXX?text=Hola,%20me%20gustaría%20simular%20una%20financiación%20para%20un%20vehículo%20Foton.%20Gracias." 
-               target="_blank" class="btn-primary" style="display: inline-block; margin: 0 auto; text-align: center;">
-                SOLICITAR SIMULACIÓN
-            </a>
-            <p class="simulator-note">
-                Las cuotas son estimativas. Para una cotización exacta y condiciones vigentes, consultá con nuestros asesores comerciales.
-            </p>
-        </div>
-
-        <!-- Requirements -->
-        <div class="container mt-4">
-            <h3 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">REQUISITOS</h3>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
-                <div style="background: var(--light-gray); padding: 2rem; border-left: 4px solid var(--foton-red);">
-                    <h4 style="margin-bottom: 1rem; color: var(--dark-graphite);">PARA PARTICULARES</h4>
-                    <ul style="list-style: none;">
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• DNI vigente</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• Recibo de sueldo o constancia de ingresos</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• Servicios a nombre del titular</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• Veraz actualizado</li>
-                    </ul>
-                </div>
-                <div style="background: var(--light-gray); padding: 2rem; border-left: 4px solid var(--foton-red);">
-                    <h4 style="margin-bottom: 1rem; color: var(--dark-graphite);">PARA EMPRESAS</h4>
-                    <ul style="list-style: none;">
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• CUIT / Constancia de inscripción</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• Estatuto societario</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• Balance último ejercicio</li>
-                        <li style="padding: 0.3rem 0; color: var(--steel-gray);">• DNI de representante legal</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -762,7 +589,7 @@
                     <h3>📱 WHATSAPP OFICIAL</h3>
                     <p><span class="contact-icon">📞</span> +54 9 2901 XXX-XXXX</p>
                     <p style="color: var(--steel-gray); font-size: 0.9rem; margin-top: 0.5rem;">
-                        Lun-Vie: 9:00 - 18:00hs | Sáb: 9:00 - 13:00hs
+                        Lunes a viernes: de 9:00 a 12:30 y de 14:30 a 19:00 · Sábados: de 9:00 a 13:00
                     </p>
                 </div>
                 <a href="https://wa.me/5492901XXXXXX?text=Hola,%20me%20gustaría%20recibir%20información%20sobre%20los%20vehículos%20Foton.%20Gracias." 
@@ -773,38 +600,43 @@
 
                 <div class="contact-item" style="margin-top: 2rem;">
                     <h3>📍 UBICACIÓN</h3>
-                    <p><span class="contact-icon">🏢</span> [Dirección completa]</p>
-                    <p><span class="contact-icon">🏙️</span> Ushuaia, Tierra del Fuego</p>
+                    <p><span class="contact-icon">🏢</span> Av. San Martín 2527, V9420 Río Grande, Tierra del Fuego</p>
+                    <p><span class="contact-icon">🏢</span> Av. Maipú 215, V9410 Ushuaia, Tierra del Fuego</p>
                 </div>
 
                 <div class="contact-item">
                     <h3>📧 EMAIL</h3>
-                    <p><span class="contact-icon">✉️</span> ventas@growpartner.com.ar</p>
-                    <p><span class="contact-icon">✉️</span> postventa@growpartner.com.ar</p>
+                    <p><span class="contact-icon">✉️</span> ventas@growthpartner.com.ar</p>
+                    <p><span class="contact-icon">✉️</span> postventa@growthpartner.com.ar</p>
                 </div>
 
                 <div class="contact-item">
                     <h3>⏰ HORARIOS</h3>
-                    <p><span class="contact-icon">🕐</span> Showroom: Lun-Vie 9:00 - 18:00hs</p>
-                    <p><span class="contact-icon">🕐</span> Taller: Lun-Vie 8:00 - 17:00hs</p>
-                    <p><span class="contact-icon">🕐</span> Sábados: 9:00 - 13:00hs</p>
+                    <p><span class="contact-icon">🕐</span> Lunes a viernes: de 9:00 a 12:30 y de 14:30 a 19:00</p>
+                    <p><span class="contact-icon">🕐</span> Sábados: de 9:00 a 13:00</p>
                 </div>
             </div>
 
             <div class="map-container">
-                <div style="text-align: center;">
+                <div class="map-content">
                     <h3 style="font-size: 2rem; margin-bottom: 1rem;">VISITANOS</h3>
-                    <p style="color: var(--light-gray); margin-bottom: 2rem;">
-                        Showroom y taller en Ushuaia, Tierra del Fuego
+                    <p style="color: var(--light-gray); margin-bottom: 1.5rem;">
+                        Locales en Río Grande y Ushuaia, Tierra del Fuego
                     </p>
-                    <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="#C8102E" stroke-width="3" opacity="0.3"/>
-                        <path d="M100 40 L100 100 L160 100" stroke="#C8102E" stroke-width="4" fill="none"/>
-                        <circle cx="100" cy="100" r="8" fill="#C8102E"/>
-                        <text x="100" y="180" font-family="Montaser Arabic, Montserrat, sans-serif" font-size="14" fill="#E5E7EB" text-anchor="middle">
-                            Ver en Google Maps →
-                        </text>
-                    </svg>
+                    <iframe
+                        class="map-frame"
+                        src="https://maps.google.com/maps?q=Av.%20San%20Mart%C3%ADn%202527%2C%20R%C3%ADo%20Grande%2C%20Tierra%20del%20Fuego%20to%20Av.%20Maip%C3%BA%20215%2C%20Ushuaia%2C%20Tierra%20del%20Fuego&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de sucursales Growth Partner en Río Grande y Ushuaia">
+                    </iframe>
+                    <a
+                        class="map-link"
+                        href="https://www.google.com/maps/dir/?api=1&origin=Av.%20San%20Mart%C3%ADn%202527%2C%20R%C3%ADo%20Grande%2C%20Tierra%20del%20Fuego&destination=Av.%20Maip%C3%BA%20215%2C%20Ushuaia%2C%20Tierra%20del%20Fuego"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Google Maps →
+                    </a>
                 </div>
             </div>
         </div>
@@ -849,19 +681,39 @@
             <div class="footer-column">
                 <h4>CONTACTO</h4>
                 <ul>
-                    <li>📍 Ushuaia, Tierra del Fuego</li>
+                    <li>📍 Av. San Martín 2527, V9420 Río Grande, Tierra del Fuego</li>
+                    <li>📍 Av. Maipú 215, V9410 Ushuaia, Tierra del Fuego</li>
                     <li>📞 +54 (2901) XXX-XXXX</li>
-                    <li>✉️ info@growpartner.com.ar</li>
-                    <li>⏰ Lun-Vie: 9:00 - 18:00hs</li>
+                    <li>✉️ info@growthpartner.com.ar</li>
+                    <li>⏰ Lunes a viernes: de 9:00 a 12:30 y de 14:30 a 19:00</li>
+                    <li>⏰ Sábados: de 9:00 a 13:00</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2024 Growth Partner. Todos los derechos reservados. | "Foton" y sus logos son marcas registradas de Beiqi Foton Motor Co., Ltd.</p>
+            <div class="footer-social" aria-label="Redes sociales">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram" title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="TikTok" title="TikTok">
+                    <i class="bi bi-tiktok"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </div>
+            <p>© 2025 Growth Partner. Todos los derechos reservados. | "Foton" y sus logos son marcas registradas de Beiqi Foton Motor Co., Ltd.</p>
             <p style="margin-top: 0.5rem; font-size: 0.85rem;">
                 <a href="#" style="color: var(--light-gray); margin: 0 1rem; text-decoration: none;">Política de Privacidad</a> | 
                 <a href="#" style="color: var(--light-gray); margin: 0 1rem; text-decoration: none;">Términos y Condiciones</a>
+            </p>
+            <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--light-gray);">
+                Sitio web desarrollado por 
+                <a href="https://ivan-programador.com/" target="_blank" rel="noopener noreferrer" style="color: var(--white); text-decoration: none;">Iván Svetcoff</a>
             </p>
         </div>
     </footer>

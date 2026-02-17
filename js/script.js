@@ -1,14 +1,4 @@
 ﻿// Smooth scrolling
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -24,20 +14,49 @@
 
         // Header background on scroll
         const header = document.getElementById('header');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
 
-        // Mobile menu toggle (to be implemented)
+        // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        mobileMenuToggle.addEventListener('click', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        });
+        const navMenu = document.querySelector('.nav-menu');
+
+        function closeMobileMenu() {
+            if (!navMenu || !mobileMenuToggle) {
+                return;
+            }
+
+            navMenu.classList.remove('is-open');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                const isOpen = navMenu.classList.toggle('is-open');
+                mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 1024) {
+                    closeMobileMenu();
+                }
+            });
+        }
 
         // Intersection Observer for animations on scroll
         const observerOptions = {
@@ -55,7 +74,7 @@
         }, observerOptions);
 
         // Observe all section headers and cards
-        document.querySelectorAll('.section-header, .lineup-card, .model-card, .service-card, .financing-card').forEach(el => {
+        document.querySelectorAll('.section-header, .model-card, .service-card, .financing-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
